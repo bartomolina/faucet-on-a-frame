@@ -23,7 +23,7 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
     destinationAddress = message.input;
   }
 
-  const destChain = message?.button === 1 ? 'Ethereuma' : 'Base';
+  const destChain = message?.button === 1 ? 'Ethereum' : 'Base';
 
   const provider = new ethers.JsonRpcProvider(process.env.ALCHEMY_URL);
   const signer = new ethers.Wallet(process.env.PRIVATE_KEY as string, provider);
