@@ -1,34 +1,40 @@
-import { FrameRequest, getFrameMessage, getFrameHtmlResponse } from '@coinbase/onchainkit';
-import { NextRequest, NextResponse } from 'next/server';
-import { NEXT_PUBLIC_URL } from '../../config';
-import { ethers } from 'ethers';
-import { supabase } from '../../../lib/supabase-client';
+import {
+  FrameRequest,
+  getFrameHtmlResponse,
+  getFrameMessage,
+} from "@coinbase/onchainkit";
+import { NextRequest, NextResponse } from "next/server";
+
+import { env } from "@/env.mjs";
+import { supabase } from "@/lib/supabase-client";
+// import { ethers } from 'ethers';
 
 async function getResponse(req: NextRequest): Promise<NextResponse> {
-  let accountAddress: string | undefined = '';
+  // let accountAddress: string | undefined = "";
   let fid: number | undefined;
-  let destinationAddress: string | undefined = '';
+  // let destinationAddress: string | undefined = "";
 
   const body: FrameRequest = await req.json();
   const { isValid, message } = await getFrameMessage(body, {
-    neynarApiKey: 'NEYNAR_ONCHAIN_KIT',
+    neynarApiKey: "NEYNAR_ONCHAIN_KIT",
   });
 
   if (isValid) {
-    accountAddress = message.interactor.verified_accounts[0];
+    // accountAddress = message.interactor.verified_accounts[0];
     fid = message.interactor.fid;
   }
 
-  if (message?.input) {
-    destinationAddress = message.input;
-  }
+  // if (message?.input) {
+  //   destinationAddress = message.input;
+  // }
 
-  const destChain = message?.button === 1 ? 'Ethereum' : 'Base';
+  // const destChain = message?.button === 1 ? "Ethereum" : "Base";
 
-  const provider = new ethers.JsonRpcProvider(process.env.ALCHEMY_URL);
-  const signer = new ethers.Wallet(process.env.PRIVATE_KEY as string, provider);
+  // const provider = new ethers.JsonRpcProvider(process.env.ALCHEMY_URL);
+  // const signer = new ethers.Wallet(process.env.PRIVATE_KEY as string, provider);
 
-  const { data, error } = await supabase.from('Users').upsert({
+  // const { data, error } =
+  await supabase.from("Users").upsert({
     id: fid,
     claimed_at: new Date().toISOString(),
   });
@@ -47,9 +53,9 @@ async function getResponse(req: NextRequest): Promise<NextResponse> {
           label: `0.1 Sepolia ETH sent!`,
         },
       ],
-      image: `${NEXT_PUBLIC_URL}/start.png`,
-      post_url: `${NEXT_PUBLIC_URL}/api/frame`,
-    }),
+      image: `${env.NEXT_PUBLIC_URL}/start.png`,
+      post_url: `${env.NEXT_PUBLIC_URL}/api/frame`,
+    })
   );
 }
 
@@ -61,4 +67,4 @@ export async function GET(req: NextRequest): Promise<Response> {
   return getResponse(req);
 }
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";

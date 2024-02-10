@@ -1,6 +1,7 @@
 import { getFrameMetadata } from '@coinbase/onchainkit';
 import type { Metadata } from 'next';
-import { NEXT_PUBLIC_URL } from './config';
+
+import { env } from '@/env.mjs';
 
 const frameMetadata = getFrameMetadata({
   buttons: [
@@ -11,30 +12,26 @@ const frameMetadata = getFrameMetadata({
       label: 'Goerli Sepolia ETH',
     },
   ],
-  image: `${NEXT_PUBLIC_URL}/start.png`,
+  image: `${env.NEXT_PUBLIC_URL}/start.png`,
   input: {
     text: 'Enter your address (0x...)',
   },
-  post_url: `${NEXT_PUBLIC_URL}/api/frame`,
+  post_url: `${env.NEXT_PUBLIC_URL}/api/frame`,
 });
 
 export const metadata: Metadata = {
-  title: 'bartomolina.xyz',
-  description: 'LFG',
+  title: 'faucet-on-a-frame.vercel.app',
+  description: 'Faucet on a frame',
   openGraph: {
-    title: 'bartomolina.xyz',
-    description: 'LFG',
-    images: [`${NEXT_PUBLIC_URL}/start.png`],
+    title: 'faucet-on-a-frame.vercel.app',
+    description: 'Faucet on a frame',
+    images: [`${env.NEXT_PUBLIC_URL}/start.png`],
   },
   other: {
     ...frameMetadata,
   },
 };
 
-export default function Page() {
-  return (
-    <>
-      <h1>bartomolina.xyz</h1>
-    </>
-  );
+export default function Home() {
+  return <h1>faucet-on-a-frame.vercel.app</h1>
 }
