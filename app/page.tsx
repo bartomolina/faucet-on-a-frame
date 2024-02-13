@@ -21,5 +21,5 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <h1>Faucet on a frame ${JSON.stringify(frameMetadata)}</h1>;
+  return <h1>Faucet on a frame</h1>;
 }

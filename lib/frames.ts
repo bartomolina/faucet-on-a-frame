@@ -28,9 +28,7 @@ export const frame_home = () => {
       },
     ] as [FrameButtonMetadata, ...FrameButtonMetadata[]],
     image:
-      `${env.NEXT_PUBLIC_URL}/api/image?body=` +
-      "🔫 Faucet on a Frame%0D%0D🥳 Claim 0.1 Base / Ethereum Sepolia ETH / 24h%0D%0D📢 Get 1 sponsor credit per 0.2 Sepolia ETH",
-    // image: `http://localhost:3000/api/image?body=🔫 tmpFaucet on a Frame%0D%0D🥳 Claim 0.1 Base / Ethereum Sepolia ETH / 24h%0D%0D📢 Get 1 sponsor credit per 0.2 Sepolia ETH`,
+      "https://faucet-on-a-frame.vercel.app/api/image?body=🔫 Faucet on a Frame%0D%0D🥳 Claim 0.1 Base / Ethereum Sepolia ETH / 24h%0D%0D📢 Get 1 sponsor credit per 0.2 Sepolia ETH",
     post_url: `${env.NEXT_PUBLIC_URL}/api/selection`,
   };
 };
@@ -104,7 +102,7 @@ export const frame_sponsor = (
   consumed: number,
   profileVisits: number
 ) => {
-  const body = `⛽️ Send some sepolia ETH to framefaucet.eth and validate the transaction below%0D%0D🪙 Ad credits: ${credits}%0D👀 Visualizations: ${consumed}%0D🚀 Profile visits: ${profileVisits}`;
+  const body = `⛽️ Send some sepolia ETH to framefaucet.eth from one of your associated addresses and validate the transaction below%0D%0D🪙 Ad credits: ${credits}%0D👀 Visualizations: ${consumed}%0D🚀 Profile visits: ${profileVisits}`;
   return {
     buttons: [
       {
