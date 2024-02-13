@@ -102,7 +102,7 @@ export const frame_sponsor = (
   consumed: number,
   profileVisits: number
 ) => {
-  const body = `⛽️ Send some sepolia ETH to framefaucet.eth from one of your associated addresses and validate the transaction below%0D%0D🪙 Ad credits: ${credits}%0D👀 Visualizations: ${consumed}%0D🚀 Profile visits: ${profileVisits}`;
+  const body = `⛽️ Send some sepolia ETH to faucet address: 0xA309... (Copy the addr. from the frame's website) from one of your associated addresses and validate the transaction below%0D%0D🪙 Ad credits: ${credits}%0D👀 Visualizations: ${consumed}%0D🚀 Profile visits: ${profileVisits}`;
   return {
     buttons: [
       {

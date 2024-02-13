@@ -21,5 +21,5 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <h1>Faucet on a frame</h1>;
+  return <h1>Faucet address: 0xA30975fF01b5a8caDb32daED4CF8e7d94BB136e2</h1>;
 }

@@ -19,7 +19,7 @@ export async function GET(req: NextRequest) {
           backgroundSize: "130% 100%",
           width: "100%",
           height: "100%",
-          padding: "30px 30px",
+          padding: "25px 30px",
           display: "flex",
         }}
       >
