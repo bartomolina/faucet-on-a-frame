@@ -35,7 +35,7 @@ export async function GET(req: NextRequest) {
           alt="Alchemy"
           style={{
             position: "absolute",
-            bottom: 125,
+            bottom: 165,
             right: 15,
             width: "150px",
           }}
@@ -43,7 +43,7 @@ export async function GET(req: NextRequest) {
         <div
           style={{
             position: "absolute",
-            bottom: 170,
+            bottom: 210,
             right: 103,
             color: "black",
             fontSize: "10px",
@@ -56,7 +56,7 @@ export async function GET(req: NextRequest) {
           alt="Airstack"
           style={{
             position: "absolute",
-            bottom: 65,
+            bottom: 105,
             right: 15,
             width: "150px",
           }}
@@ -66,7 +66,7 @@ export async function GET(req: NextRequest) {
           alt="Base"
           style={{
             position: "absolute",
-            bottom: 15,
+            bottom: 55,
             right: 15,
             width: "150px",
           }}
