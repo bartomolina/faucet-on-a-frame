@@ -32,6 +32,7 @@ export async function GET(req: NextRequest) {
         </div>
         <img
           src={`${env.NEXT_PUBLIC_URL}/alchemy-logo.png`}
+          alt="Alchemy"
           style={{
             position: "absolute",
             bottom: 125,
@@ -52,6 +53,7 @@ export async function GET(req: NextRequest) {
         </div>
         <img
           src={`${env.NEXT_PUBLIC_URL}/airstack-logo.png`}
+          alt="Airstack"
           style={{
             position: "absolute",
             bottom: 65,
@@ -61,6 +63,7 @@ export async function GET(req: NextRequest) {
         />
         <img
           src={`${env.NEXT_PUBLIC_URL}/base-logo.png`}
+          alt="Base"
           style={{
             position: "absolute",
             bottom: 15,
