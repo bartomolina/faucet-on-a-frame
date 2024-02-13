@@ -29,7 +29,8 @@ export const frame_home = () => {
         label: "⛽️ Sponsor",
       },
     ] as [FrameButtonMetadata, ...FrameButtonMetadata[]],
-    image: `${env.NEXT_PUBLIC_URL}/api/image?body=${body}`,
+    // image: `${env.NEXT_PUBLIC_URL}/api/image?body=${body}`,
+    image: `http://localhost:3000/api/image?body=🔫 Faucet on a Frame%0D%0D🥳 Claim 0.1 Base / Ethereum Sepolia ETH / 24h%0D%0D📢 Get 1 sponsor credit per 0.2 Sepolia ETH`,
     post_url: `${env.NEXT_PUBLIC_URL}/api/selection`,
   };
 };
@@ -60,7 +61,7 @@ export const frame_not_following = () => {
 
 // Claim
 export const frame_claim = (baseRemaining: string, ethRemaining: string) => {
-  const body = `🔌 Select Network%0D%0D💰 Base Sepolia: ${baseRemaining} ETH%0D💰 Ethereum Sepolia: ${ethRemaining} ETH`;
+  const body = `🔌 Select Network%0D%0D⛽️ Base Sepolia: ${baseRemaining} ETH%0D⛽️ Ethereum Sepolia: ${ethRemaining} ETH`;
   return {
     buttons: [
       {
