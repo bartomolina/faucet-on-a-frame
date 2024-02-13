@@ -83,7 +83,7 @@ export const frame_claimed = (
   profileDisplayName: string,
   profileName: string
 ) => {
-  const body = `🚀 0.1 Sepolia ETH sent%0D%0D👇 Visit our sponsor`;
+  const body = `🚀 0.1 Sepolia ETH sent%0D%0D%0D%0D%0D%0D%0D👇 Visit our sponsor`;
   return {
     buttons: [
       {
