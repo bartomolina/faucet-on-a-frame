@@ -1,31 +1,19 @@
-import { getFrameMetadata } from '@coinbase/onchainkit';
-import type { Metadata } from 'next';
+import { getFrameMetadata } from "@coinbase/onchainkit";
+import { Metadata } from "next";
 
-import { env } from '@/env.mjs';
+import { env } from "@/env.mjs";
+import { frame_home } from "@/lib/frames";
 
-const frameMetadata = getFrameMetadata({
-  buttons: [
-    {
-      label: 'Ethereum Sepolia ETH',
-    },
-    {
-      label: 'Goerli Sepolia ETH',
-    },
-  ],
-  image: `${env.NEXT_PUBLIC_URL}/start.png`,
-  input: {
-    text: 'Enter your address (0x...)',
-  },
-  post_url: `${env.NEXT_PUBLIC_URL}/api/frame`,
-});
+const frameMetadata = getFrameMetadata(frame_home());
 
 export const metadata: Metadata = {
-  title: 'faucet-on-a-frame.vercel.app',
-  description: 'Faucet on a frame',
+  metadataBase: new URL(env.NEXT_PUBLIC_URL),
+  title: "faucet-on-a-frame",
+  description: "Faucet on a frame",
   openGraph: {
-    title: 'faucet-on-a-frame.vercel.app',
-    description: 'Faucet on a frame',
-    images: [`${env.NEXT_PUBLIC_URL}/start.png`],
+    title: "faucet-on-a-frame",
+    description: "Faucet on a frame",
+    images: [`${env.NEXT_PUBLIC_URL}/image?body=🔫 Faucet on a frame`],
   },
   other: {
     ...frameMetadata,
@@ -33,5 +21,5 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  return <h1>faucet-on-a-frame.vercel.app</h1>
+  return <h1>Faucet on a frame</h1>;
 }

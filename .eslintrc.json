@@ -19,6 +19,12 @@
     "unicorn/no-useless-undefined": "off",
     "unicorn/no-array-reduce": "off",
     "unicorn/no-array-for-each": "off",
-    "unicorn/no-null": "off"
+    "unicorn/no-null": "off",
+    "unicorn/no-nested-ternary": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "tailwindcss/no-custom-classname": "off",
+    "@typescript-eslint/no-non-null-asserted-optional-chain": "off",
+    "unicorn/no-await-expression-member": "off",
+    "@typescript-eslint/ban-ts-comment": "off"
   }
 }
